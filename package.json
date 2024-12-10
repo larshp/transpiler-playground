@@ -1,0 +1,21 @@
+{
+  "name": "transpiler-playground",
+  "private": true,
+  "version": "1.0.0",
+  "description": "transpiler-playground",
+  "scripts": {
+    "lint": "abaplint",
+    "build": "rm -rf output && abap_transpile abap_transpile.json",
+    "unit": "npm run build && echo RUNNING && node output/index.mjs",
+    "test": "npm run lint && npm run downport && npm run unit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@abaplint/cli": "^2.113.73",
+    "@abaplint/database-sqlite": "^2.10.20",
+    "@abaplint/runtime": "^2.10.21",
+    "@abaplint/transpiler-cli": "^2.10.21",
+    "abapmerge": "^0.16.6"
+  }
+}
